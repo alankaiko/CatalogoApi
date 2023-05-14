@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProdutoController extends AbstractController<Produto, ProdutoDTO> {
     static final String PATH = "produtos";
 
-    private final ProdutoService service;
+    private final ProdutoService produtoService;
 
-    public ProdutoController(ProdutoService service) {
-        super(service);
-        this.service = service;
+    public ProdutoController(ProdutoService produtoService) {
+        super(produtoService);
+        this.produtoService = produtoService;
     }
 }
