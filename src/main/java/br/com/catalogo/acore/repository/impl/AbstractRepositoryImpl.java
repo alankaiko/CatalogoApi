@@ -4,7 +4,6 @@ import br.com.catalogo.acore.model.AbstractDTO;
 import br.com.catalogo.acore.model.AbstractEntity;
 import br.com.catalogo.acore.repository.AbstractRepository;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;

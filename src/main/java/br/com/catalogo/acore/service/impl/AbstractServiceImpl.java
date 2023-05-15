@@ -4,7 +4,6 @@ import br.com.catalogo.acore.model.AbstractDTO;
 import br.com.catalogo.acore.model.AbstractEntity;
 import br.com.catalogo.acore.repository.AbstractRepository;
 import br.com.catalogo.acore.service.AbstractService;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -37,10 +36,5 @@ public abstract class AbstractServiceImpl<T extends AbstractEntity, D extends Ab
     @Override
     public List<T> listar() {
         return this.dao.findAll();
-    }
-
-    @Override
-    public Page listarPaginado(D filtro) {
-        return this.dao.findAll(filtro);
     }
 }

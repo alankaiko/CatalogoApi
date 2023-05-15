@@ -1,54 +1,13 @@
 package br.com.catalogo.acore.model;
 
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 
-public class AbstractDTO implements Serializable, Pageable {
-
-    @Override
-    public int getPageNumber() {
-        return 0;
-    }
-
-    @Override
-    public int getPageSize() {
-        return 0;
-    }
-
-    @Override
-    public long getOffset() {
-        return 0;
-    }
-
-    @Override
-    public Sort getSort() {
-        return null;
-    }
-
-    @Override
-    public Pageable next() {
-        return null;
-    }
-
-    @Override
-    public Pageable previousOrFirst() {
-        return null;
-    }
-
-    @Override
-    public Pageable first() {
-        return null;
-    }
-
-    @Override
-    public Pageable withPage(int pageNumber) {
-        return null;
-    }
-
-    @Override
-    public boolean hasPrevious() {
-        return false;
-    }
+@Getter
+@Setter
+public class AbstractDTO implements Serializable {
+    private int pagina;
+    private int itensPorPagina;
 }

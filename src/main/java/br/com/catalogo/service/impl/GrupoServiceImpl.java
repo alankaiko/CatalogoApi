@@ -5,6 +5,8 @@ import br.com.catalogo.model.Grupo;
 import br.com.catalogo.model.dto.GrupoDTO;
 import br.com.catalogo.repository.GrupoRepository;
 import br.com.catalogo.service.GrupoService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,5 +18,10 @@ public class GrupoServiceImpl extends AbstractServiceImpl<Grupo, GrupoDTO> imple
     public GrupoServiceImpl(GrupoRepository grupoRepository) {
         super(grupoRepository);
         this.grupoRepository = grupoRepository;
+    }
+
+    @Override
+    public Page<Grupo> Filtrando(GrupoDTO grupoDTO, Pageable pageable) {
+        return this.grupoRepository.Filtrando(grupoDTO, pageable);
     }
 }

@@ -3,7 +3,6 @@ package br.com.catalogo.acore.controller;
 import br.com.catalogo.acore.model.AbstractDTO;
 import br.com.catalogo.acore.model.AbstractEntity;
 import br.com.catalogo.acore.service.AbstractService;
-import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,10 +32,5 @@ public abstract class AbstractController<T extends AbstractEntity, D extends Abs
     @GetMapping
     public List<T> listar() {
         return this.service.listar();
-    }
-
-    @PostMapping({"listar-paginado"})
-    public Page listarPaginado(@RequestBody(required = false) D filtro) {
-        return this.service.listarPaginado(filtro);
     }
 }
