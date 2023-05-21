@@ -13,21 +13,11 @@ import java.util.List;
 @Getter
 @Setter
 @EqualsAndHashCode(callSuper = false)
-public class Produto extends AbstractEntity {
+public class Parametro extends AbstractEntity {
     @Column(length = 60)
     private String nome;
 
-    @Column(length = 300)
-    private String descricao;
-
-    @Column(length = 2000)
-    private String informacao;
-
     @JsonIgnore
-    @OneToMany(mappedBy = "produto")
-    private List<Imagem> imagems;
-
-    @OneToOne
-    @JoinColumn(name = "tbl_grupo_id", referencedColumnName = "codigo")
-    private Grupo grupo;
+    @OneToMany(mappedBy = "parametro")
+    List<Informacao> informacoes;
 }

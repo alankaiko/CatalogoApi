@@ -4,6 +4,7 @@ import br.com.catalogo.acore.model.AbstractDTO;
 import br.com.catalogo.acore.model.AbstractEntity;
 import br.com.catalogo.acore.service.AbstractService;
 import org.springframework.web.bind.annotation.*;
+import javax.validation.Valid;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ public abstract class AbstractController<T extends AbstractEntity, D extends Abs
     }
 
     @PostMapping
-    public T salvar(@RequestBody T entidade) {
+    public T salvar(@Valid @RequestBody T entidade) {
         return this.service.salvar(entidade);
     }
 
