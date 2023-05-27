@@ -29,7 +29,7 @@ public class ProdutoController extends AbstractController<Produto, ProdutoDTO> {
     }
 
     @PostMapping("/anexo")
-    public Anexo uploadAnexo(@RequestParam MultipartFile[] anexos)  {
+    public Anexo uploadAnexo(@RequestParam MultipartFile[] anexo)  {
         //return this.service.SalvarNaAmazon(anexo);
         return null;
     }
